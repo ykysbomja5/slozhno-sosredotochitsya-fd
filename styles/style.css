@@ -153,6 +153,41 @@ border-color: rgba(255, 0, 112, 1);
   margin-right: 0px;
 } 
 
+.reasons_title_focus {
+  
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 23.4px;
+  
+  color: var(--accent-color);
+  }
+  
+  .reasons_list_item_title_focus {
+    background-color: #ff0070;
+  }
+  
+  .reasons_title_focus {
+    margin-block-start: 40px;
+    margin-block-end: 20px;
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    
+  }
+    
+    .reasons_list_item_title_focus {
+      color: rgba(0, 0, 40, 1);
+      margin: 10px;
+    
+    }
+  
+    .reasons_list_item_text_focus {
+      margin-inline-start: 10px;
+      color: var(--main-text-color);
+      margin-inline-end: 10px;
+    }
+
 .reasons_title {
   
 font-weight: 800;
@@ -303,10 +338,101 @@ color: var(--accent-color);
   @media (width >= 768px) {
     .header__theme-menu {
       margin-top: 142px;
-      margin-right: 50px;
+      margin-right: 20px;
+    }
+
+    .header {
+      height: 1024px;
+    }
+
+    .title_header {
+      justify-self: start;
+      margin-left: 0px;
     }
 
     .rec {
-      padding-right: 20px;
+      padding-right: 0px;
+    }
+
+  .header_text_container {
+    
+    justify-self: end;
+    width: 364px;
+    height: 117px;
+    margin-top: 162px;
+    
   }
+  
+  .focus_container {
+    margin-bottom: 80px;
+    margin-right: 20px;
+    margin-left: 20px;
+    display: grid;
+    grid-template-columns: 236px 1fr;
+  }
+
+  .reasons_title {
+    margin-left: 30px;
+    margin-right: 20px;
+  }
+
+  .reasons_list {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .reasons_list_item_title {
+    margin-inline-start: 20px;
+    margin-inline-end: 20px;
+  }
+
+  .advice_list {
+    margin-inline-start: 20px;
+    margin-inline-end: 20px;
+  }
+
+  .images_list_title {
+    margin-inline-start: 20px;
+    margin-inline-end: 20px;
+  }
+
+  .images_list {
+    display: grid;
+    grid-template-columns: 229px 230px 229px; /* 3 колонки по 229px */
+    grid-template-rows: 192px 229px 318px;    /* строки: 192px, 229px, 318px */
+    gap: 10px; /* промежуток между элементами */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
+  }
+  
+  .images_list_item:first-child {
+    grid-area: 1 / 1 / 2 / 3; /* 1 строка, колонки 1-2 */
+  }
+  
+  .images_list_item:nth-child(2) {
+    grid-area: 1 / 3 / 3 / 4; /* строки 1-2, 3 колонка */
+  }
+  
+  .images_list_item:nth-child(3) {
+    grid-area: 2 / 1 / 4 / 2; /* строки 2-3, 1 колонка */
+  }
+  
+  .images_list_item:nth-child(4) {
+    grid-area: 2 / 2 / 3 / 3; /* 2 строка, 2 колонка */
+  }
+  
+  .images_list_item.last_image {
+    grid-area: 3 / 2 / 4 / 4; /* 3 строка, колонки 2-3 */
+  }
+  
+  .images_list_item1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* чтобы изображения заполняли свои ячейки */
+  }
+
 }
