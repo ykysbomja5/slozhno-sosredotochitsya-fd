@@ -1,5 +1,312 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
+:root {
+  overflow-x: hidden;
+}
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-color: var(--bg-color, #ffffff);
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: 400;
+  overflow-x: hidden;
+  
+}
+
+.header {
+  inline-size: 100%;
+  height: 668px;
+  background-image: url(/images/cover-image-dark.png);
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+
+}
+
+.header__theme-menu {
+  margin-top: 75px;
+  display: flex;
+  justify-content: end;
+  margin-inline-end: 20px;
+}
+
+.title_header {
+  display: flex;
+  justify-content: center;
+  font-size: clamp(7.5rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 83%;
+  letter-spacing: 7px;
+  font-weight: 700;
+  color: var(--heading-text-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.header_text_container {
+  background-color: var(--accent-color);
+  margin-block-start: 55px;
+  margin-inline-end: 20px;
+  margin-inline-start: 10px;
+  margin-block-end: 66px;
+}
+
+.header_text {
+  font-weight: 700;
+  color: var(--head-color);
+  font-size: 18px;
+  
+}
+
+.header__theme-menu-button {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 100%;
+  padding: 3px 13px;
+  border: 1px solid transparent;
+  background: transparent;
+  transition-duration: var(--transition-duration);
+  cursor: pointer;
+  text-transform: lowercase;
+  color: var(--border-color, #ff0070);
+  
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--secondary-color, #ff007040);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end-color: currentColor;
+}
+
+.header__theme-menu-button_active {
+  cursor: default;
+  border-color: currentColor;
+  pointer-events: none;
+}
+
+.header_decor {
+   
+  
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #ff0070;
+  text-transform: uppercase;  
+  
+}
+
+.decor_circle {
+  width: 9px;
+  height: 9px;
+  background-color: #ff0070;
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 2px rgba(255, 0, 112, 1);
+
+  border-width: 1px, 1px, 0px, 0px;
+
+border-style: solid;
+
+border-color: rgba(255, 0, 112, 1);
+
+
+
+
+
+
+
+}
+
+.rec {
+  position: absolute;
+  width: 97vw;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: 10px;
+  margin-right: 10px;
+
+
+  
+
+}
+
+.square {
+
+  width: 25px;
+  height: 25px;
+  border-top: #ff0070 solid 1px;
+  border-right: #ff0070 solid 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0px;
+} 
+
+.reasons_title {
+  
+font-weight: 800;
+font-size: 20px;
+line-height: 23.4px;
+
+color: var(--accent-color);
+}
+
+.reasons_list_item_title {
+  background-color: #ff0070;
+}
+
+.reasons_title {
+  margin-block-start: 40px;
+  margin-block-end: 20px;
+  margin-inline-start: 10px;
+  margin-inline-end: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  
+}
+  
+  .reasons_list_item_title {
+    color: rgba(0, 0, 40, 1);
+    margin: 10px;
+  
+  }
+
+  .reasons_list_item_text {
+    margin-inline-start: 10px;
+    color: var(--main-text-color);
+    margin-inline-end: 10px;
+  }
+
+  .advice_list_item_title {
+    background-color: var(--accent-color);
+    color: var(--head-color);
+    margin-inline-end: 10px;
+    margin-inline-start: 10px;
+    font-weight: 400;
+    list-style-type: none;
+    margin-block-start: 20px;
+    margin-block-end: 10px;
+  }
+
+  .advice_list_item_text {
+    color: var(--main-text-color);
+    margin-inline-end: 10px;
+    margin-inline-start: 10px;
+  }
+
+  .images_list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-right: 10px;
+  }
+
+  .images_list_item1 {
+    width: 355px;
+    margin-inline-start: 10px;
+    
+  }
+
+  .images_list_title {
+    background-color: var(--accent-color);
+    color: var(--head-color);
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
+    margin-block-start: 50px;
+    margin-block-end: 10px;
+  }
+
+  .footer {
+    height: 667px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    
+  }
+
+  .footer_header {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 83%;
+  letter-spacing: 0%;
+  font-weight: 700px;
+  color: var(--heading-text-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  margin-top: 286px;
+  margin-inline-end: 10px;
+  }
+
+  .square_footer {
+    position: absolute;
+    width: 25px;
+  height: 25px;
+  border-top: #ff0070 solid 1px;
+  border-right: #ff0070 solid 1px;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  margin-top: 10px;
+  margin-left: 340px;
+  margin-right: 10px;
+  }
+
+  .square_footer_reverse {
+    
+    width: 25px;
+  height: 25px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-bottom: #ff0070 solid 1px;
+  border-left: #ff0070 solid 1px;
+  
+  }
+
+
+
+  .header {
+    overflow-x: hidden;
+  }
+
+  .main {
+    overflow-x: hidden;
+  }
+
+  footer {
+    overflow-x: hidden;
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+
+  
+
+  
+  
+  
+  
+  
+  @media (width >= 768px) {
+    .header__theme-menu {
+      margin-top: 142px;
+      margin-right: 50px;
+    }
+
+    .rec {
+      padding-right: 20px;
+  }
 }
