@@ -5,7 +5,7 @@
 */
 
 :root.theme-light {
-  --font-family: "IBM Plex Mono", monospace;
+  
   --bg-color: #fff1f7;
   --head-color: #ffffff;
   --bg-image: url(/image/cover-image-light-png);

@@ -268,7 +268,7 @@
     margin-right: 10px;
   }
 
-  .images_list_item1 {
+  .images_list_item_image {
     width: 355px;
     margin-inline-start: 10px;
     
@@ -478,7 +478,7 @@
     grid-area: 3 / 2 / 4 / 4; /* 3 строка, колонки 2-3 */
   }
   
-  .images_list_item1 {
+  .images_list_item_image {
     width: 100%;
     height: 100%;
     object-fit: cover; /* чтобы изображения заполняли свои ячейки */
@@ -562,7 +562,7 @@
 
   .reasons_list_item_title_right {
     width: 472px;
-    font-size: 20px;
+    font-size: 18px;
     margin-left: 20px;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -670,6 +670,10 @@
     margin-inline-end: 0px;
     margin-block-start: 20px;
     justify-self: center;
+  }
+
+  .header__theme-menu-list {
+    margin-top: 10px;
   }
 
   .header__theme-menu-list {
