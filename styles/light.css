@@ -4,82 +4,44 @@
   переключая тему
 */
 
-:root.theme-light {
-  
-  --bg-color: #fff1f7;
-  --head-color: #ffffff;
-  --bg-image: url(/image/cover-image-light-png);
-  --main-text-color: rgba(53, 52, 48, 1);
-  --accent-color: rgba(255, 141, 203, 1);
-  --heading-text-color: #DB00FF;
+.page.theme_light {
+  --title-color: #FFC2E6;
+  --text-color: #353430;
+  --sub-text-color: #353430;
+  --accent-color: #ff8dcb;
+  --btn-color:#353430;
+  --backgroung-image: url(../images/cover-image-light.png);
 }
 
-
-.theme-light .page {
-  background-color: var(--bg-color);
-  
-}
-
-.theme-light .header {
-  background-image: url(/images/cover-image-light.png);
-}
-
-
-.theme-light .title_header {
-  color: rgba(255, 194, 230, 1);
-  text-shadow: 4px 4px 0 var(--accent-color);
-
-}
-
-.theme-light .header__theme-menu-button  {
-  color: var(--border-color, rgba(53, 52, 48, 1));
-}
-
-.theme-light .header_decor {
+.theme_light .decorative__element {
   display: none;
 }
 
-.theme-light .decor_circle {
-  display: none;
+.theme_light .header__theme-menu-button:hover {
+  border: 1px solid rgba(50, 49, 45, 0.40);
 }
 
-.theme-light .header__theme-menu-button_active {
-  border-color: rgba(53, 52, 48, 1);
+@media (min-width: 1024px) {
+  .header__title {
+    text-shadow: 4px 5px 0 #FF0070;
+  }
+  .footer__title {
+    text-shadow: 4px 4px 0 #FF0070;
+  }
 }
 
-.theme-light .square {
-  border-color: rgba(53, 52, 48, 1);
-}
-
-.theme-light .header_text {
-  color: var(--main-text-color);
-}
-
-.theme-light .square_footer_reverse {
-  border-color: var(--main-text-color);
-}
-
-.theme-light .reasons_list_item_title {
-  background-color: var(--accent-color);
-}
-
-.theme-light .reasons_title {
-  color: var(--main-text-color);
-}
-
-.theme-light .advice_list_item_title {
-  color: var(--main-text-color);
-}
-
-.theme-light .images_list_title {
-  color: var(--main-text-color);
-}
-
-.theme-light .square_footer {
-  border-color: var(--main-text-color);
-}
-
-.theme-light .footer_header {
-  color: rgba(255, 194, 230, 1);
-  text-shadow: 4px 4px 0 var(--accent-color);
-}
+@media (prefers-color-scheme: light) {
+  :root {
+    --title-color: #FFC2E6;
+    --text-color: #353430;
+    --sub-text-color: #353430;
+    --accent-color: #ff8dcb;
+    --btn-color:#353430;
+    --backgroung-image: url(../images/cover-image-light.png);
+  }
+  
+  
+  .header__theme-menu-button:hover {
+    border: 1px solid rgba(50, 49, 45, 0.40);
+  }
+}  

@@ -1,91 +1,39 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-:root {
-  overflow-x: hidden;
-}
-
+/* Базовые стили*/
+/* Я переделал почти весь проект, надеюсь вам понравится) */
 .page {
-  background-color: var(--bg-color, #ffffff);
-  background-image: var(--bg-image);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  font-family: var(--font-family);
-  font-size: 18px;
-  overflow-x: hidden;
-  
+  margin: 0 auto;
+  font: 400 var(--font-size)/23.4px var(--font, monospace);
+  background: var(--backgroung-image) center/cover fixed;
 }
 
 .header {
-  inline-size: 100%;
-  height: 668px;
-  background-image: url(/images/cover-image-dark.png);
+  min-height: 100vh;
+  padding: 10px;
   position: relative;
   display: grid;
-  grid-template-rows: 1fr min-content 1fr;
-  overflow-y: hidden;
-}
-
-
-.header__theme-menu {
-  margin-top: 75px;
-  display: flex;
-  justify-content: end;
-  margin-inline-end: 20px;
+  grid-template-rows: 1fr auto 1fr;
 }
 
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-}
-
-.title_header {
-  display: flex;
-  justify-content: center;
-  font-style: inherit;
-  font-size: clamp(7.5rem, 7.0115rem + 1.0178vw, 7.5rem);
-  line-height: 83%;
-  letter-spacing: 7px;
-  font-weight: 700;
-  color: var(--heading-text-color);
-  text-shadow: 4px 4px 0 var(--accent-color);
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-block-start: 65px;
-}
-
-.header_text_container {
-  background-color: var(--accent-color);
-  margin-block-start: 48px;
-  margin-inline-end: 20px;
-  margin-inline-start: 10px;
-  margin-block-end: 38px;
-}
-
-.header_text {
-  font-weight: 700;
-  color: var(--head-color);
-  font-size: 18px;
-  letter-spacing: 1px;
+  align-items: flex-end;
+  row-gap: 13px;
+  margin-top: 67px;
 }
 
 .header__theme-menu-button {
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 100%;
-  padding: 3px 13px;
-  border: 1px solid transparent;
+  padding: 0 13px;
+  color: var(--btn-color);
   background: transparent;
-  transition-duration: var(--transition-duration);
-  cursor: pointer;
-  text-transform: lowercase;
-  color: var(--border-color, #ff0070);
-  
+  border: none;
+  text-align: center;
 }
 
-.header__theme-menu-button:hover {
-  border: 1px solid var(--secondary-color, #ff007040);
+.header__theme-menu-button_active {
+  pointer-events: none;
+  border: 1px solid var(--btn-color);
 }
 
 .header__theme-menu-button:focus {
@@ -93,715 +41,378 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-block-end-color: currentColor;
+  border-bottom: 1px solid var(--btn-color);
 }
 
-.header__theme-menu-button_active {
-  cursor: default;
-  border-color: currentColor;
-  pointer-events: none;
+.header__theme-menu-button:hover {
+  border: 1px solid rgba(255, 0, 112, 0.4);
+  cursor: pointer;
 }
 
-.header_decor {
-   
-  
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 25px;
-  letter-spacing: 0%;
-  text-align: center;
-  color: #ff0070;
-  text-transform: uppercase;  
-  
+.decorative__element {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--btn-color);
+  text-transform: uppercase;
+  padding-right: 8px;
+  margin: 10px;
 }
 
-.decor_circle {
+.decorative__element::after {
+  content: "";
+  display: block;
   width: 9px;
   height: 9px;
-  background-color: #ff0070;
   border-radius: 50%;
-  box-shadow: 0px 0px 4px 2px rgba(255, 0, 112, 1);
-  border-width: 1px, 1px, 0px, 0px;
-  border-style: solid;
-  border-color: rgba(255, 0, 112, 1);
+  background: var(--accent-color);
+  filter: drop-shadow(0 0 4px var(--accent-color));
 }
 
-.rec {
+.rec_icon::before {
+  content: "";
   position: absolute;
-  width: 97vw;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  margin-top: 10px;
-  margin-right: 10px;
-}
-
-.square {
-
+  top: 0;
+  right: 0;
+  border-top: 1px solid var(--btn-color);
+  border-right: 1px solid var(--btn-color);
   width: 25px;
   height: 25px;
-  border-top: #ff0070 solid 1px;
-  border-right: #ff0070 solid 1px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 0px;
-} 
-
-
-  
-  .reasons_list_item_title_focus {
-    background-color: #ff0070;
-    letter-spacing: 1px;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 23.4px;
-  }
-
-  .reasons_list_item_focus:nth-child(2) {
-    margin-block-start: 25px;
-  }
-  
-  .reasons_title_focus {
-    font-size: 20px;
-    line-height: 23.4px;
-    font-weight: 700;
-    color: var(--accent-color);
-    margin-block-start: 40px;
-    margin-block-end: 20px;
-    margin-inline-start: 10px;
-    margin-inline-end: 10px;
-    font-weight: 700;
-    font-size: 20px;
-    
-  }
-    
-    .reasons_list_item_title_focus {
-      color: rgba(0, 0, 40, 1);
-      margin: 10px;
-    
-    }
-  
-    .reasons_list_item_text_focus {
-      margin-inline-start: 12px;
-      color: var(--main-text-color);
-      margin-inline-end: 12px;
-    }
-
-.reasons_title {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 23.4px;
-  color: var(--accent-color);
-  margin-block-start: 60px;
-  margin-block-end: 20px;
-  margin-inline-start: 10px;
-  margin-inline-end: 10px;
-  font-weight: 700;
-  font-size: 18px;
-  letter-spacing: 1px;
-  
+  margin: 10px;
 }
-  
-  .reasons_list_item_title {
-    color: rgba(0, 0, 40, 1);
-    margin: 10px;
-    background-color: #ff0070;
-    margin-block-start: 20px;
-  }
 
-  .reasons_list_item_text {
-    margin-inline-start: 10px;
-    color: var(--main-text-color);
-    margin-inline-end: 10px;
-    letter-spacing: 1px;
-    line-height: 23px;
-  }
+.rec_icon::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid var(--btn-color);
+  border-left: 1px solid var(--btn-color);
+  width: 25px;
+  height: 25px;
+  margin: 10px;
+}
 
-  .reasons_list_item:nth-child(3) {
-    margin-block-start: 26px;
-  }
-
-  .advice_list_item_title {
-    
-    background-color: var(--accent-color);
-    color: var(--head-color);
-    margin-inline-end: 10px;
-    margin-inline-start: 10px;
-    font-weight: 400;
-    list-style-type: none;
-    margin-block-start: 20px;
-    margin-block-end: 10px;
-  }
-
-  .advice_list_item_text {
-    color: var(--main-text-color);
-    margin-inline-end: 10px;
-    margin-inline-start: 10px;
-    letter-spacing: 1px;
-    line-height: 23.3px;
-  }
-
-  
-
-  .reasons_title_concentraion {
-    margin-block-start: 55px;
-    letter-spacing: 1px;
-    
-   font-size: 20px;
-   line-height: 23.4px;
-
-     color: var(--accent-color);
-  
-  margin-block-end: 20px;
-  margin-inline-start: 10px;
-  margin-inline-end: 10px;
-  font-weight: 700;
-  font-size: 18px;
-  letter-spacing: 1px;
-  }
-
-  .images_list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-right: 10px;
-  }
-
-  .images_list_item_image {
-    width: 355px;
-    margin-inline-start: 10px;
-    
-  }
-
-  .reasons_list_item_text_focus {
-    letter-spacing: 1px;
-    line-height: 23px;
-  }
-
-  .images_list_title {
-    background-color: var(--accent-color);
-    color: var(--head-color);
-    margin-inline-start: 10px;
-    margin-inline-end: 10px;
-    margin-block-start: 50px;
-    margin-block-end: 10px;
-    letter-spacing: 0px;
-  }
-
-  .images_list_item:nth-child(1) {
-    height: 141px;
-  }
-
-  .images_list_item:nth-child(2) {
-    height: 355px;
-  }
-
-  .images_list_item:nth-child(3) {
-    height: 235px;
-  }
-
-  .images_list_item:nth-child(4) {
-    height: 354px;
-  }
-
-  .footer {
-    height: 710px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .footer_header {
-    display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  line-height: 83%;
-  letter-spacing: 8px;
-  font-weight: 700px;
-  color: var(--heading-text-color);
+.header__title {
+  margin-left: 0;
   text-shadow: 4px 4px 0 var(--accent-color);
-  margin-top: 331px;
-  margin-inline-end: 10px;
-  margin-inline-start: 10px;
-  }
-
-  .square_footer {
-    position: absolute;
-    width: 25px;
-  height: 25px;
-  border-top: #ff0070 solid 1px;
-  border-right: #ff0070 solid 1px;
-  display: flex;
-  justify-content: end;
-  align-items: end;
-  margin-top: 47px;
-  margin-left: 340px;
-  margin-right: 10px;
-  }
-
-  .square_footer_reverse {
-  
-    width: 25px;
-  height: 25px;
-  margin-left: 10px;
-  margin-bottom: 10px;
-  border-bottom: #ff0070 solid 1px;
-  border-left: #ff0070 solid 1px;
-  margin-top: 200px;
-  }
-
-  .header {
-    overflow-x: hidden;
-  }
-
-  .main {
-    overflow-x: hidden;
-    overflow-y: hidden;
-  }
-
-  footer {
-    overflow-x: hidden;
-  }
-
-  html {
-    overflow-x: hidden;
-    
-  }
-
-  @media (width >= 768px) {
-    .header__theme-menu {
-      margin-top: 192px;
-      margin-right: 22px;
-    }
-
-    .header {
-      height: 1024px;
-    }
-
-    .title_header {
-      justify-self: start;
-      margin-left: 0px;
-      margin-block-start: 80px;
-    }
-
-    .rec {
-      padding-right: 0px;
-      padding-block-start: 10px;
-    }
-
-  .header_text_container {
-    
-    justify-self: end;
-    width: 364px;
-    height: 117px;
-    margin-top: 155px;
-    
-  }
-
-  .square_footer_down {
-    margin-top: 20px;
-  }
-  
-  .focus_container {
-    margin-bottom: 50px;
-    margin-right: 20px;
-    margin-left: 20px;
-    display: grid;
-    grid-template-columns: 236px 1fr;
-  }
-
-  
-
-  .reasons_list_item:nth-child(2) {
-    margin-top: 26px;
-  }
-
-  .reasons_list_item:nth-child(3) {
-    margin-top: 27px;
-  }
-
-  .reasons_list {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
-  .reasons_list_item_title {
-    margin-right: 0px;
-    margin-inline-end: 0px;
-    height: min-content;
-    margin-left: 0px;
-  }
-
-  .advice_list {
-    margin-inline-start: 20px;
-    margin-inline-end: 20px;
-  }
-
-  .images_list_title {
-    margin-inline-start: 20px;
-    margin-inline-end: 20px;
-    margin-block-start: 87px;
-  }
-
-  .images_list {
-    display: grid;
-    grid-template-columns: 229px 230px 229px; /* 3 колонки по 229px */
-    grid-template-rows: 192px 229px 318px;    /* строки: 192px, 229px, 318px */
-    gap: 10px; /* промежуток между элементами */
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    gap: 20px;
-    margin-inline-start: 10px;
-    margin-inline-end: 10px;
-  }
-  
-  .images_list_item:first-child {
-    grid-area: 1 / 1 / 2 / 3; /* 1 строка, колонки 1-2 */
-  }
-  
-  .images_list_item:nth-child(2) {
-    grid-area: 1 / 3 / 3 / 4; /* строки 1-2, 3 колонка */
-  }
-  
-  .images_list_item:nth-child(3) {
-    grid-area: 2 / 1 / 4 / 2; /* строки 2-3, 1 колонка */
-  }
-  
-  .images_list_item:nth-child(4) {
-    grid-area: 2 / 2 / 3 / 3; /* 2 строка, 2 колонка */
-  }
-  
-  .images_list_item.last_image {
-    grid-area: 3 / 2 / 4 / 4; /* 3 строка, колонки 2-3 */
-  }
-  
-  .images_list_item_image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* чтобы изображения заполняли свои ячейки */
-  }
-
-  .advice_container {
-    display: grid;
-    grid-template-columns: min-content 1fr;
-    grid-template-rows: 1fr;
-    margin-top: 83px;
-    margin-inline-start: 10px;
-  }
-
-  .reasons_title {
-    grid-column: 1;
-    grid-row: 1;
-    width: min-content;
-    font-size: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-block-start: 70px;
-    letter-spacing: 1px;
-  }
-
-  .reasons_list_item_title {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  .advice_list {
-    grid-column: 2;
-    grid-row: 1;
-    padding-block-start: 24px;
-  }
-
-  .header_decor {
-    margin-inline-end: 4px;
-  }
-  
-  .focus_container {
-    margin-block-start: 60px;
-  }
-
-  .reasons_title_focus {
-    margin-top: 0px;
-    margin-left: 0px;
-    white-space: break-spaces;
-    font-weight: 700;
-  }
-
-  .reasons_list_item_title_focus {
-    margin-right: 0px;
-    margin-top: 0px;  
-  }
-
-  .reasons_list_item_text_focus {
-    margin-bottom: 20px;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
-    letter-spacing: 1px;
-  }
-
-
-  .reasons_list_focus {
-    margin-inline-start: 10px;
-  }
-
-  .reasons_list_item:nth-child(2) {
-    margin-block-start: 22px;
-  }
-
-  .reasons_list_item:nth-child(3) {
-    margin-block-start: 22px;
-  }
-
-  .reasons_list_item_text {
-    margin-right: 0px;
-    margin-left: 0px;
-  }
-
-  .reasons_list_item_title_right {
-    width: 472px;
-    font-size: 18px;
-    margin-left: 20px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    
-  }
-
-  .images_list_title {
-    margin-block-end: 20px;
-    margin-block-start: 83px;
-  }
-
-  .advice_list_item_title {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-
-  .advice_list_item:nth-child(2) {
-    margin-block-start: 18px;
-  }
-
-  .advice_list_item:nth-child(3) {
-    margin-block-start: 20px;
-  }
-
-  .advice_list_item:nth-child(4) {
-    margin-block-start: 20px;
-  }
-
-  .advice_list_item:nth-child(5) {
-    margin-block-start: 20px;
-  }
-
-  .square_footer {
-    margin-left: 722px;
-    margin-block-start: 20px;
-  }
-
-  .footer {
-    height: 1024px;
-    margin-block-start: 60px;
-  }
-
-  .footer_header {
-    margin-top: 463px;
-    font-weight: 700;
-    font-size: 120px;
-    line-height: 83%;
-    letter-spacing: 110%;
-  }
-
-  .square_footer_reverse {
-    margin-left: 20px;
-    margin-block-end: 18px;
-  }
-
-  .reasons_title_concentraion {
-    margin-top: 0px;
-    white-space: initial;
-    margin-right: 0px;
-    width: 236px;
-    font-weight: 700;
-    font-size: 20px;
-    letter-spacing: 0px;
-  }
-
-  .advice_list_item_text {
-    margin-inline-start: 0px;
-    letter-spacing: 0.8px;
-  }
-
-  .images_list_item:nth-child(1) {
-    height: inherit;
-  }
-
-  .images_list_item:nth-child(2) {
-    height: inherit;
-  }
-
-  .images_list_item:nth-child(3) {
-    height: inherit;
-  }
-
-  .images_list_item:nth-child(4) {
-    height: inherit;
-  }
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  color: var(--title-color);
+  font-weight: 700;
+  line-height: 82.5%;
 }
 
-@media (width >= 1024px) {
+.title-decor {
+  font-weight: 700;
+  background: var(--accent-color);
+  font-size: var(--font-size);
+  line-height: 23.4px;
+  color: var(--sub-text-color);
+}
 
+.header-text {
+  max-width: 355px;
+  justify-self: end;
+  align-self: center;
+}
+
+
+.discussion__section-title {
+  color: var(--btn-color);
+  font-weight: 700;
+  line-height: 23.4px;
+  font-size: var(--font-size);
+}
+
+.discussion__section-answer-text {
+  font-size: var(--font-size);
+  color: var(--text-color);
+}
+
+.discussion__section-answer-link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.discussion__section-answer-link:hover {
+  border-bottom: 1px solid var(--text-color);
+}
+
+.discussion__section-answer-link:focus {
+  outline: none;
+}
+
+.discussion__section-answer-link:focus-visible {
+  border: 1px solid var(--text-color);
+}
+
+.discussion__section__one {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 40px;
+  margin: 0 10px;
+}
+
+.discussion__section-answer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.discussion__section-answer p:first-of-type {
+  padding-bottom: 10px;
+}
+
+.discussion__section-two {
+  padding: 50px 0;
+  margin: 0 10px;
+}
+
+.discussion__section-answer-two-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.discussion__section-title-two {
+  min-width: 355px;
+}
+
+.discussion__section-answer-title-two {
+  margin-bottom: 10px;
+}
+
+.discussion__section__fhree {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 50px;
+  margin: 0 10px;
+}
+
+.discussion__section-answer-subtitle {
+  font-weight: 400;
+}
+
+.discussion__section-answer-fhree {
+  display: grid;
+  gap: 20px;
+}
+
+.discussion__section-answer-text-fhree {
+  padding-top: 10px;
+}
+
+.discussion__section__image {
+  padding-bottom: 40px;
+}
+
+.discussion__section-title-image {
+  margin: 0 10px 10px;
+}
+
+.discussion__section__image-container {
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.discussion__section__image-item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.footer {
+  min-height: 100vh;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__title {
+  text-shadow: 4px 4px 0 var(--accent-color);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  color: var(--title-color);
+  font-weight: 700;
+  line-height: 82.5%;
+}
+
+@media (width>= 768px) { /* планшеты */
   .header {
-    height: 768px;
-  }
-
-  .rec {
-    justify-self: end;
-    position: absolute;
-    margin-inline-end: 20px;
-    margin-block-start: 5px
-    
+    padding: 20px;
   }
 
   .header__theme-menu {
-    
-    margin-block-start: 10px;
-    margin-inline-end: 0px;
-    margin-block-start: 20px;
-    justify-self: center;
+    align-items: end;
+    justify-content: end;
+    padding-block-start: 170px ;
   }
 
   .header__theme-menu-list {
-    margin-top: 10px;
+    flex-direction: column;
+    justify-content: end;
+    margin-top: 0px;
+  }
+
+  .decorative__element {
+    margin: 20px;
+  }
+
+  .rec_icon::before,
+  .rec_icon::after {
+    margin: 20px;
+  }
+
+  .header__title {
+    margin-left: -20px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header-text {
+    max-width: 364px;
+  }
+
+  .discussion__section__one {
+    grid-template-columns: 33% 67%;
+    display: grid;
+    gap: 20px;
+    padding-right: 20px;
+    padding-top: 60px;
+    margin: 0 20px;
+  }
+
+  .discussion__section-two {
+    padding: 80px 0;
+    margin: 0 20px;
+  }
+
+  .discussion__section-answer-two-container {
+    display: flex;
+    flex-direction: row;
+    gap: 79px;
+  }
+
+  .discussion__section-title-two {
+    max-width: 236px;
+    min-width: auto;
+  }
+  
+  .discussion__section__fhree {
+    grid-template-columns: 35% 65%;
+    display: grid;
+    padding-bottom: 80px;
+    margin: 0 20px;
+    gap: 0px;
+  }
+
+  .discussion__section-answer-fhree {
+    margin-inline-end: 0px;
+  }
+
+  .discussion__section__image {
+    padding-bottom: 60px;
+  }
+
+  .discussion__section-title-image {
+    margin: 0 20px 20px;
+  }
+
+  .discussion__section__image-container {
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    margin: 0 20px;
+    gap: 20px;
+  }
+
+  .discussion__section__image-item:first-of-type {
+    grid-column: span 2;
+  }
+
+  .discussion__section__image-item:nth-of-type(2) {
+    grid-column: 3;
+    grid-row: span 2;
+  }
+
+  .discussion__section__image-item:nth-of-type(3) {
+    grid-row: span 2;
+  }
+
+  .discussion__section__image-item:nth-of-type(4) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .discussion__section__image-item:last-of-type {
+    grid-column: span 2;
+  }
+
+  .footer {
+    padding: 20px;
+  }
+
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+
+@media (width>= 1024px) { /* ноуты */
+  .header__theme-menu {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-block-start: 0px;
   }
 
   .header__theme-menu-list {
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
   }
 
-  .title_header {
-    margin-block-end: 75px;
-    font-weight: 700;
-    font-size: 157px;
-    line-height: 83%;
-    letter-spacing: 0%;
-    margin-inline-start: 5px;
+  .header-text {
+    max-width: 491px;
   }
 
-  .header_text_container {
-    width: 491px;
-    height: 71px;
-    position: absolute; 
-    align-self: end;
-    margin-block-end: 137px;
+  .discussion__section__one {
+    grid-template-columns: 32% 67%;
+    gap: 30px;
   }
 
-  .square_footer_down {
-    align-self: end;
-    margin-block-end: 21px;
+  .discussion__section-title-two {
+    max-width: 315px;
   }
 
-  .reasons_title_focus {
+  .discussion__section-answer-two {
     width: 315px;
   }
 
-  .reasons_list_focus {
-    width: 649px;
-    justify-self: end;
-    margin-inline-start: 0px;
-  }
-
-  .reasons_list_item_title_focus {
-    margin-inline-start: 0px;
-  }
-
-  .reasons_list_item_text_focus {
-    margin-inline-start: 0px;
-    letter-spacing: 0px;
-    line-height: 23px;
-  }
-
-  .reasons_list_item_focus:nth-child(2) {
-    margin-block-start: 0px;
-  }
-
-  .reasons_title {
-    width: 100%;
-    margin-block-start: 65px;
-    letter-spacing: 0.1px;
-  }
-
-  .reasons_list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  .discussion__section-answer-two-container {
     gap: 20px;
   }
 
-  .reasons_list_item_title:nth-child(1) {
-    margin-block-start: 0px;
-  }
-
-  .reasons_list_item:nth-child(2) {
-    margin-block-start: 0px;
-  }
-
-  .reasons_list_item:nth-child(3) {
-    margin-block-start: 0px;
-  }
-
-  .reasons_list_item_text {
-    line-height: 22px;
-  }
-
-  .reasons_title_concentraion {
+  .discussion__section-answer-title-two {
     width: 315px;
   }
 
-  .reasons_list_item_title_right {
-    width: 94%;
+  
+  .discussion__section-two:nth-child(1) {
+    padding-block-end: 57px;
   }
-
-  .images_list_title {
-    margin-block-start: 77px;
-  }
-
-  .images_list {
-    grid-template-columns: 315px 315px 315px;
-    grid-template-rows: 260px 315px 433px;
-  }
-
-  .images_list_item:nth-child(1) {
-    width: 100%;
-    height: inherit;
-  }
-
-  .images_list_item:nth-child(2) {
-    height: inherit;
-  }
-
-  .images_list_item:nth-child(3) {
-    height: inherit;
-  }
-
-  .images_list_item:nth-child(4) {
-    height: inherit;
-  }
-
-  .footer {
-    height: 768px;
-  }
-
-  .square_footer {
-    position: absolute;
-    margin-inline-start: 980px;
-    margin-inline-end: 0px;
-    justify-self: end;
-  }
-
-  .footer_header {
-    font-size: 157px;
-    margin-block-start: 325px;
+  
+  .discussion__section__fhree {
+    grid-template-columns: 34% 66%;
   }
 }
 
