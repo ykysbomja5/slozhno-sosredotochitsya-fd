@@ -298,8 +298,8 @@
 
   .discussion__section-answer-two-container {
     display: flex;
-    flex-direction: row;
-    gap: 79px;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .discussion__section-title-two {
@@ -399,6 +399,7 @@
   }
 
   .discussion__section-answer-two-container {
+    flex-direction: row;
     gap: 20px;
   }
 
